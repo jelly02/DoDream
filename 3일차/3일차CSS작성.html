@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" /> 
+        
+        <!--width=1200px ▶ 콘텐츠 폭 기준(PC) -->
+        <!--width=device-width, initial-scale=1 모바일or반응형 웹 설정-->
+
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="노블웍스" />
+        <title>노블웍스</title> <!--필수 작성-->
+        <meta name="description" content="노블웍스 웹사이트" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="fa/css/all.min.css" rel="stylesheet" />
+
+        <!--css적용 시작-->
+        <link href="css/style.css" rel="stylesheet" media="screen and (min-width : 851px)" />
+        
+
+        <!-- <link href="css/web_font.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" media="screen and (min-width : 851px)" />
+        <link href="css/style_mobile.css" rel="stylesheet" media="screen and (max-width : 850px)" />
+         -->
+
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body class="main">
+         
+        <!--wrapper=내가 쓴 모든 컨텐츠를 포함하는 div-->
+         <div id="wrapper">
+
+            <!--아이디가 main인 페이지 내부로 링크-->
+             <a href="#main" id="skip-nav">본문 바로가기</a>
+
+             <header id="header" class="on"> <!--header=네비바 공간 의미-->
+                <h1><a href="3일차HTML작성.html"><img alt="NOVEL WORKS"src="img/logo.png"/></a></h1>  <!--'/>' 슬래시는 xml문법 준수 위해-->
+
+                <nav id=gnb> <!--이 웹사이트의 네비바-->
+                    <ul>
+                        <li>
+                            <a href="">COMPANY</a> <!--대메뉴-->
+                                <ul> <!--서브메뉴-->
+                                    <li>
+                                        <a href="#">회사정보</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">특허사항</a>
+                                    </li>
+                                </ul>    
+                        </li> 
+                        <li>
+                            <a href="">BUSINESS</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">제품개발 생산</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">원천기술개발</a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="">PRODUCT</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">All</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">UV 소독</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">CLEAN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">소형가전</a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="">TECHNOLOGY</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">UV LED</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">광촉매</a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="">CONTACT US</a>                        
+                        </li>
+                    </ul>
+                </nav> <!--네비 바 끝-->
+
+                <ul id="top-lang">
+                    <li><a href="#">ENG</a></li>
+                    <li class="on"><a href="#">KOR</a></li>
+                </ul>
+
+                <a href="#" class="sitemap">
+                    <i class="fas fa-bars">
+                        <span>사이트맵 열기</span> <!--스크린 리더가 읽어줄 때 의미를 읽히게-->
+                    </i>
+                </a>
+             </header>
+
+             <main id="main">
+                 <section id="main-visual"> <!--section : div보다 큰 개념 (별 의미 없음)-->
+                    <ul class="slide">
+                        <li> <!--첫번째 슬라이드-->
+                            <p class="slogan"> 
+                                <span>GLOBAL BUSINESS</span>
+                                <em>
+                                    <span class="green">N</span>OVEL<br />
+                                    <span class="lime">W</span>ORKS
+                                </em>
+                            </p>
+
+                            <a href="#" >
+                                <img alt="PRODUCT 바로가기" src="img/main_visual_icon.png">
+                            </a>
+                        </li> 
+                        <li> <!--두번째 슬라이드-->
+                            <p class="slogan"> 
+                                <span>GLOBAL BUSINESS</span>
+                                    <em>
+                                    NOVEL<br />
+                                        WORKS
+                                    </em>
+                            </p>
+                        </li> 
+                    </ul>
+
+                    <p class="control">
+                        <a href="#" class="prev">
+                            <i class="fas fa-angle-left"><span>이전</span></i>
+                        </a>
+                        <a href="#" class="next">
+                            <i class="fas fa-angle-right"><span>다음</span></i>
+                        </a>
+                    </p> 
+                 </section>
+
+                 <section id="main-summary">
+                     <div class="content-box"> <!--1200px을 폭+ 가운데 정렬 -->
+                        <div class="product">
+                            <h3> 제품기획·개발·생산</h3>
+
+                            <ul>
+                                <li>UV 소독</li>
+                                <li>CLEAN</li>
+                                <li>소형가전</li>
+                                <li>BEAUTY</li>
+                            </ul>
+                        </div>
+
+                        <div class="slogan">
+                            <p>국내를 넘어<br />
+                                세계로 도약하는 기업<br /></p>
+                                    <span class="green">N</span>OVEL<br />
+                                    <span class="lime">W</span> ORKS
+                        </div> 
+
+                        <div class="rnd">
+                            <h3>Research &amp; Develope</h3>
+
+                            <ul>
+                                <li>센서 개발</li>
+                                <li>UV LED 적용 기술</li>
+                            </ul>
+                        </div>
+
+                        <div class="odm">
+                            <h3>ODM / OEM</h3>
+
+                            <ul>
+                                <li>제품 기획</li>
+                                <li>금형 설계</li>
+                                <li>디자인/설계</li>
+                                <li>시제품 제작</li>
+                                <li>회로 설계</li>
+                                <li>양산품 제작</li>
+                            </ul>
+                        </div>
+                       
+                        <div class="bg"></div> <!--background만 넣을 예정-->
+                     </div>   
+                </section>
+
+                <section id="main-dev"> <!--1200px 안에 들어간다는 가정(반응형) -->
+                    <div class="content-box"> 
+                        <h2>DEV.PROCESS</h2>
+                        <p>노블웍스는 체계화된 개발 프로세스로 품질좋은 상품을 제작합니다.</p>
+
+                        <ol class="process">
+                            <li>
+                                <img alt="" src="img/main_icon_01.jpg"/>
+                                <span class="num">01</span>
+                                <em title="title">제품기획</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_02.jpg"/>
+                                <span class="num">02</span>
+                                <em title="title">디자인</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_03.jpg"/>
+                                <span class="num">03</span>
+                                <em title="title">기구 설계</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_04.jpg"/>
+                                <span class="num">04</span>
+                                <em title="title">회로 개발</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_05.jpg"/>
+                                <span class="num">05</span>
+                                <em title="title">시제품 제작</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_06.jpg"/>
+                                <span class="num">06</span>
+                                <em title="title">금형 제작</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_07.jpg"/>
+                                <span class="num">07</span>
+                                <em title="title">패키지 제작</em>
+                            </li>
+
+                            <li>
+                                <img alt="" src="img/main_icon_08.jpg"/>
+                                <span class="num">08</span>
+                                <em title="title">양산품 생산</em>
+                            </li>
+                        </ol>
+                        
+                        <h3>
+                            <span class="green">D</span>EVELOPMENT
+                            <span class="lime">I</span>NTRODUCTION
+                        </h3>
+
+                        <div class="main-slide">
+                            <ul class="slide">
+                                <li><img alt="" src="img/main_slide_img_01.jpg"></li>
+                                <li><img alt="" src="img/main_slide_img_02.jpg"></li>
+                                <li><img alt="" src="img/main_slide_img_03.jpg"></li>
+                            </ul>
+
+                            <ul class="content">
+                                <li>
+                                    <em class="title">NOVEL WORKS</em>
+                                    <a href="#">
+                                        <i class="fas fa-plus">
+                                        <span>000 바로가기</span>
+                                        </i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <img alt="" src="img/main_slide_sub_03.png" />
+                                    <em class="title">UV LED</em>
+                                    <p>UV LED기술을 선도하는 기업<br>
+                                        노벨웍스는 차별화된 기술력을 통해<br>
+                                        고객사와 함께 성장해나갑니다.</p>
+                                    
+                                    <a href="#">
+                                        <i class="fas fa-plus">
+                                        <span>000 바로가기</span>
+                                        </i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <img alt="" src="img/main_slide_sub_02.png" />
+                                    <em class="title">광촉매 살균</em>
+                                    <p>노블웍스만의 차별화 된 광촉매 살균 기술. <br>
+                                        광촉매 살균 [UV-A]은 촉매작용을 갖게 되는 물질로 <br>
+                                        반영구적 사용이 가능하고, 인체에 무해합니다.</p>
+                                    
+                                    <a href="#">
+                                        <i class="fas fa-plus">
+                                        <span>000 바로가기</span>
+                                        </i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <p class="control">
+                                <a href="#" class="prev">
+                                    <i class="fas fa-angle-left"><span>이전</span></i>
+                                </a>
+                                <a href="#" class="next">
+                                    <i class="fas fa-angle-right"><span>다음</span></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="main-online">
+                    <div class="content-box"> <!--1200px-->
+                        <h2>온라인 상담신청</h2>
+                        <div class="form">
+                            <ul class="form-left">
+                                <li>
+                                    <label for="name">이름</label> <!--id가 name인 곳으로 가라(접근성!)-->
+                                    <input type="text" name="" id="name" placeholder="담당자 성함을 입력하세요" />
+                                </li>
+
+                                <li>
+                                    <label for="company">회사명</label> <!--id가 name인 곳으로 가라(접근성!)-->
+                                    <input type="text" name="" id="company" placeholder="회사명을 입력하세요" />
+                                </li>
+
+                                <li>
+                                    <label for="contact">연락처</label> <!--id가 name인 곳으로 가라(접근성!)-->
+                                    <input type="text" name="" id="contact"" placeholder="연락처를 입력하세요" />
+                                </li>
+
+                                <li>
+                                    <label for="product">문의상품</label> <!--id가 name인 곳으로 가라(접근성!)-->
+                                    
+                                    <select name="" id="product">
+                                        <option>- 문의 상품을 선택해주세요 -</option>
+                                        <option>상품1</option>
+                                        <option>상품2</option>
+                                        <option>상품3</option>
+                                        <option>상품4</option>
+                                        <option>상품5</option>
+                                        <option>상품6</option>
+                                        <option>상품7</option>
+                                    </select>
+                                </li>
+                            </ul>
+
+                            <ul class="form-right">
+                                <li>
+                                    <label for="question">문의내용</label> <!--id가 name인 곳으로 가라(접근성!)-->
+                                    <textarea type="text" name="" id="question" placeholder="문의하실 내용을 입력하세요" >  
+                                    </textarea>
+                                </li>
+
+                                <li>
+                                    <a href="#">개인정보처리방침<i class="fas fa-search"></i></a>
+                                    <p>
+                                        <label for="agree">개인정보처리방침에 동의합니다.</label>
+                                        <input type="checkbox" name="" id="agree"/>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <button type="submit">상담 신청하기</button>
+                                </li>
+                            </ul>
+                      </div>
+                    </div> 
+                </section>
+             </main>
+
+             <footer id="footer">
+                <div class="content-box">
+                    <ul class="link">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms &amp; Conditions</a>
+                            <a href="#">Location</a>
+                        </li>
+                    </ul>
+
+                    <address>
+                        <div class="information">
+                            <h3>INFORMATION</h3>
+
+                            <ul>
+                                <li><span>Company</span>Novel works</li>
+                                <li><span>CEO</span>Sung Hyun, Lee</li>
+                                <li><span>License No</span>557-86-00290</li>
+                            </ul>
+                        </div>
+                        <div class="CONTACT">
+                            <h3>CONTACT</h3>
+
+                            <ul>
+                                <li><span>T</span>82-2-2169-2289</li>
+                                <li><span>F</span>82-2-2169-2289</li>
+                                <li><span>E</span>info@novel-works.com</li>
+                            </ul>
+                        </div>
+                        <div class="LOCATION">
+                            <h3>LOCATION</h3>
+
+                            <ul>
+                                <li><span>Head office</span>B-1001, Hyundai knowledge industry center, Doosan-ro 70, Geumchen-gu, Seoul, Republic of Korea.</li>
+                                <li><span>Korea Factory</span>58, Sinheung-ro 469 beon-gil, Bucheon-si, Gyeonggi-do, Republic of Korea.</li>
+                                <li><span>China Factory</span>3-3, No 17 Sanwei Gongye ST, Gushu, Xixiang, Baoan, Shenzhen, China</li>
+                            </ul>
+                        </div>
+                    </address>
+
+                    <p class="copyright">Copyright. 2019
+                        <em>Novleworks</em>.All right reserved.
+                    </p>
+                </div>
+             </footer>
+
+         </div>  
+    </body>
+</html>
+
+

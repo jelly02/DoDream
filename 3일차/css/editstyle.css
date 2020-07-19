@@ -1,0 +1,20 @@
+@charset 'utf-8';
+/* CSS Document */
+
+/*ReSet : 초기화 
+body 
+{    margin: 0; /* ▶ 여백 없애기 }
+
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table 
+{margin: 0; padding: 0;}  ▶ 여백 없애기, 왼쪽으로 달라붙음
+
+a {color: inherit; text-decoration: none;}  
+color : #3333333 부모 상속 보다 이렇게 색 지정한게 더 우선순위임
+inherion : 부모의 속성을 상속 받음
+
+a img{border: none;} */
+
+/* common : 모든 페이지에 적용되는 부분 */
+body {font-family: 'NotoSansKR', '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo',
+     Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #f9f9f9;}
+/*이 폰트 없어? 그럼 다음 거 그것도 없어? 다음 거 이것도 없어? ... ... .그럼 장식 없는 아무 폰트나 써*/

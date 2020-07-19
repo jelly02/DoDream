@@ -1,0 +1,39 @@
+@charset 'utf-8';
+/* CSS Document */
+
+body {margin: 0;}             
+
+
+
+/*▼ 박스 모델 예시 - 콘텐츠 영역만 반영*/
+/*#test-box {background: pink; width: 300px; height: 200px; padding: 20px; border: 5px solid #cccccc;}*/
+
+*#test-box {background: pink url(../img/logo.png) 0 0 repeat-x; max-width: 1000px; height: 200px; padding: 20px; border: 5px solid 
+            transparent;  } 
+            /* ▲ 투명*/                    
+/* 
+★ 추 가 설 명 ★
+
+0.박스 크기 확인하려면 배경 색을 넣어봐라
+1.background 배경은 padding까지 들어간다.
+2.background 포지션 기준 : padding 
+3.왼쪽 0 오른쪽 0 > 왼쪽으로 딱 붙으라는 의미
+4.background 없는 것과 background 이미지 있는 것 같이 쓸 수 있음
+>
+5.background 배경 넣는 명령어 : {background: pink url(../img/logo.png) 0 0 no-repeat; 가 default
+6.box-sizing: border-box; >> border까지 다 포함한게 1000px이 됨(max-width: 1000px;)
+7.inline 속성 : margin 좌우는 잘 먹는데 위 아래는 잘 안 먹음
+8.display: inline-block 으로 하면 margin도 잘 먹힘
+9. 마진통합(마진끼리 만날 때도 통합, 마진 머리끼리 만나도 통합
+10.overflow:auto; 흘러가는 방향대로 스크롤바 생성 / 200px 크기 안에서
+*/            
+
+
+#box2 {background: yellow; width: 200px; height: 200px; overflow:hidden; } /*마진통합 margin-top: 50px;*/
+#box2 div.box {background: lime; margin-top: 50px;}  
+
+em{background: yellow;} 
+em:first-child{background: red;} /*em태그의 부모 태그 바로 밑 태그를 의미*/
+em.test {display: inline-block; background: blue; width: 100px; height: 100px; padding: 20px; margin: 100px 100px;} /*인라인속성*/
+                                                                                  /* ▲ 먹힘*/  /* ▲안먹힘 위 아래 좌우는 먹힘*/
+                                                         

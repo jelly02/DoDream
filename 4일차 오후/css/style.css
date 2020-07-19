@@ -1,0 +1,209 @@
+@charset 'utf-8';
+/* CSS Document */
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('※'),
+        url('../font/NotoSansKR-Regular.woff2') format('woff2'), 
+        url('../font/NotoSansKR-Regular.woff') format('woff'),
+        url('../font/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('※'),
+        url('../font/NotoSansKR-Bold.woff2') format('woff2'), 
+        url('../font/NotoSansKR-Bold.woff') format('woff'),
+        url('../font/NotoSansKR-Bold.otf') format('opentype');
+}
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+.ir-hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: 'NotoSansKR', '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', 
+      Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #222222; background: #ffffff;}
+
+#wrapper {min-width: 1024px; overflow: hidden;} /*1024px 보다 더 작아지지 않음*/
+
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; height: 40px; text-align: center; 
+           line-height: 40px; font-size: 16px; background: rgba(0, 0, 0, 0.5); color: #ffffff; 
+           transition: top 0.3s; z-index: 10000;}
+#skip-nav:focus {top: 0;}
+
+#header {position: fixed; left: 0; top: 0; min-width: 1024px; width: 100%; height: 100px; z-index: 1000; 
+        transition: background 0.3s;}
+#header:after {content: ''; position: absolute; left: 0; top: calc(100% + 1px); width: 100%; 
+               height: 0; background: #ffffff; box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.1); 
+               transition: height 0.3s;}
+#header h1 {position: absolute; left: 30px; top: 0;}
+
+#gnb {position: absolute; left: 300px; top: 0; font-size: 15px; color: #999999; overflow: hidden;
+     height: 100px; z-index: 100; transition: height 0.3s;}
+#gnb > ul > li {float: left; height: 300px;}
+#gnb > ul > li + li {margin-left: 5px;}
+#gnb > ul > li > a {position: relative; display: block; padding: 0 30px; height: 100px; 
+                    line-height: 100px; transition: color 0.3s;}
+#gnb > ul > li:hover > a {color: #000000;}
+#gnb > ul > li > a:after {content: ''; position: absolute; left: 50%; transform: translate(-50%, 0); 
+                          bottom: 0; width: 0; height: 1px; background: #000000; 
+                          transition: width 0.3s;}
+#gnb > ul > li:hover > a:after {width: 100%;}
+#gnb > ul > li > ul {margin-top: 30px;}
+#gnb > ul > li > ul > li + li {margin-top: 10px;}
+#gnb > ul > li > ul > li > a {display: block; text-align: center; transition: color 0.3s;}
+#gnb > ul > li > ul > li > a:hover {color: #000000;}
+
+#header.on {background: #ffffff; border-bottom: 1px solid #e0e0e0;}
+#header.on:after {height: 200px;}
+#header.on #gnb {height: 300px;}
+
+/*모바일 화면 안 깨지게 하는 용도*/
+@media screen and (max-width : 1300px)
+{
+    #gnb > ul > li > a {padding: 0 8px;} /*1300px보다 작아지면 해당요소의 padding영역을 줄임 */
+    #gnb > ul > li > ul > li > a > {font-size: 13px;}
+}                                         /*코드는 제일 나중에 쓴 게 먼저 쓴 걸 덮는다*/
+
+
+#top-lang {position: absolute; right: 100px; top: 50%; transform: translate(0, -50%);}
+#top-lang li {float: left;}
+#top-lang li a {display: block; background: #eeeeee; padding: 6px 15px;}
+#top-lang li:first-child a {border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+#top-lang li:last-child a {border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
+#top-lang li.on a {background: linear-gradient(to right, rgb(43, 182, 116) 0%, 
+                rgb(12, 169, 180) 100%); color: #ffffff;}
+
+#header a.sitemap {position: absolute; right: 30px; top: 50%; transform: translate(0, -50%); 
+                  font-size: 24px; color: #999999; line-height: 0;}
+
+
+
+
+/* main */
+#main-visual {position: relative; height: 850px;}
+#main-visual ul.slide {}
+#main-visual ul.slide li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#main-visual ul.slide li:first-child {background: url(../img/main_visual_01.jpg) center center no-repeat; 
+                                      display: block; background-size:cover ;}
+#main-visual ul.slide li:last-child {background: url(../img/main_visual_02_sub.png) 90% bottom no-repeat, 
+                                    url(../img/main_visual_02.jpg) center center no-repeat; background-size: auto, cover ;
+                                    }
+#main-visual ul.slide li p.slogan {position: absolute; left: 200px; top: 50%; transform: translate(0, -50%); font-weight: 700;}
+#main-visual ul.slide li:last-child p.slogan {color: #ffffff;}
+#main-visual ul.slide li p.slogan > span {display: block; font-size: 16px; margin-bottom: 10px;}
+#main-visual ul.slide li p.slogan > em {font-size: 80px; line-height: 1em;}
+#main-visual ul.slide li:first-child a {position: absolute; left: calc(50% + 250px); transform: translate(-50%, 0); top: 200px;}
+#main-visual p.control {position: absolute; left: 200px; bottom: -50px;}
+#main-visual p.control a {position: relative; display: inline-block; width: 100px; height: 100px; color: #ffffff; border-radius: 100px; font-size: 30px;}
+#main-visual p.control a + a {margin-left: 20px;}
+#main-visual p.control a.prev {background: #2bb673;}
+#main-visual p.control a.next {background: #0ba9b5;}
+#main-visual p.control a i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
+#main-summary {padding: 100px 0;}
+#main-summary > div.content-box {max-width: 1200px; margin: 0 auto; overflow: hidden;}
+#main-summary > div.content-box > div {float: left; box-sizing: border-box; padding: 30px; font-size: 16px;}
+#main-summary h3 {position: relative; font-size: 24px; margin-bottom: 30px;}
+#main-summary h3:after {content: ''; position: absolute; left: 0; bottom: -10px; width: 40px; height: 2px; background: #ffffff;}
+#main-summary ul li + li {margin-top: 5px;}
+#main-summary > div.content-box > div.product {width: 30%; height: 600px; background: url(../img/main_content_01.jpg) center center no-repeat; color: #ffffff;}
+#main-summary > div.content-box > div.slogan {width: 45%; height: 300px; background: url(../img/main_content_02.jpg) right center no-repeat; font-size: 20px; color: #ffffff;}
+#main-summary > div.content-box > div.rnd {width: 25%; height: 300px; background: #ffffff;}
+#main-summary > div.content-box > div.odm {width: 25%; height: 300px; background: #ffffff;}
+#main-summary > div.content-box > div.rnd h3:after,
+#main-summary > div.content-box > div.odm h3:after {background: #0ba9b5;}
+#main-summary > div.content-box > div.bg {width: 45%; height: 300px; 
+                            background: url(../img/main_content_03.jpg) center center no-repeat;}
+
+
+#main-dev {padding: 100px 0; position: relative;}
+#main-dev > div.content-box {max-width: 1200px; margin: 0 auto; text-align: center; 
+                             outline: 1px solid pink;}
+#main-dev > div.content-box h2 {font-size: 30px; margin-bottom: 10px;}
+#main-dev > div.content-box h2 + p {font-size: 16px; color: #999999;}
+
+/* 개발 과정 아이콘 이미지 정렬하기 */ 
+#main-dev > div.content-box ol.process { margin: 80px 0 100px 0;}
+
+#main-dev > div.content-box ol.process:before {content: ''; position: absolute; left: 0; top: 342px; 
+                                                width: 100%; height: 1px; background: #e0e0e0;}
+
+#main-dev > div.content-box ol.process li {display: inline-block; width: 12%; position: relative;
+                                          height: 180px;}
+#main-dev > div.content-box ol.process li > * {display: block; }
+#main-dev > div.content-box ol.process li img {position: relative; margin: 0 auto 80px auto;} /*시계방향으로 속성들을 다 지정함*/
+#main-dev > div.content-box ol.process li span {font-size: 12px; margin-bottom: 10px;}
+#main-dev > div.content-box ol.process li em {font-size: 18px;}
+
+#main-dev > div.content-box ol.process li:before {content: ''; position: absolute; left:50%; top: 80px;
+                                                 width: 10px; height: 8px; background: #e0e0e0;
+                                                 border-radius: 10px; transform: translate(-50%,0);}
+#main-dev > div.content-box ol.process li em:before {content: ''; position: absolute; left:50%; top: 79px;
+                                                 width: 12px; height: 12px; background: transparent;
+                                                 border-radius: 10px; transform: translate(-50%,0);}
+#main-dev > div.content-box ol.process li em:after {content: ''; position: absolute; left:50%; top: 75px;
+                                                    width: 16px; height: 16px; border: 2px solid transparent;
+                                                    border-radius: 10px; transform: translate(-50%,0);}                                               
+
+#main-dev > div.content-box ol.process li.on img {top:-30px;}
+#main-dev > div.content-box ol.process li.on em:before {background-color: #0ba9b5;}   
+#main-dev > div.content-box ol.process li.on em:after {border-color: #0ba9b5;}                                                  
+
+
+/*다음 이미지 슬라이드 작업*/
+#main-dev h3 {text-align: left; margin-bottom: 15px; font-size: 20px;}
+#main-dev div.main-slide {background: pink; position: relative;}
+
+#main-dev p.dummy { max-width: 1100px; margin: 0 auto;}
+#main-dev p.dummy {width: 100%;}
+
+#main-dev div.main-slide ul.slide {position: absolute; top: 0; left: 50%; max-width: 1100px; 
+                                   width: 100%; transform: translate(-50%,0); height: 100%;}
+#main-dev div.main-slide ul.slide li {position: absolute; left: 0; top: 0;}
+#main-dev div.main-slide ul.slide img {width: 100%;} /*부모 폭만큼의 폭을 가져라*/
+#main-dev div.main-slide ul.content li {position: absolute; left: 0; bottom: 0;}
+#main-dev div.main-slide p.control a {position: absolute; top: 0; width: 50px;  height: 100%;
+                                      font-size: 30px;}
+
+#main-dev div.main-slide p.control a.prev {left: 0;}                                      
+#main-dev div.main-slide p.control a.next {right:0; }
+
+#main-dev div.main-slide p.control a i {position: absolute; left: 50%; top: 50%; 
+                                       transform: translate(-50%, -50%);}
+
+/* module */
+.green {color: #2bb673;}
+.lime {color: #0ba9b5;}
+
+
+
+
+
+
+
+
+
+
+
