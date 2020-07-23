@@ -1,0 +1,98 @@
+@charset 'utf-8';
+/* CSS Document */
+
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+.ir-hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: 'Noto Serif KR', serif; font-weight: 400; font-size: 14px; 
+      color: #333333; background: #ffffff;}
+
+#wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center;
+           font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); z-index: 10000;
+           transition: top 0.3s;}
+
+#skip-nav:focus {top: 0;} /*평소에 안 보이다가 포커즈가 가면 짠 등장 */
+
+                                         /* ▼ 포지션이fixed 일 때 지정 */
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 100px; z-index: 1000;
+        background: #eeeeee;} 
+
+#header h1 {position: absolute; left: 50px; bottom: 0; background: pink;} /*왼쪽에서 50 띄고 아래쪽에 붙이기*/
+#header h1 a {display: block; width: 100%; height: 100%;} /*h1영역 = a 영역*/
+
+/*position: absolute; 레이아웃에서 분리, top:0 위로 붙이기, transform(본인 요소의 크기가 기준)*/
+#header h1 a img.icon1 {position: absolute; top:0; left: 50%; transform: translate(-110%,0);} 
+#header h1 a img.icon2 {position: absolute; top:10px; left: 50%; transform: translate(10%,0);}
+
+#header a.menu {position: absolute; right: 50px; bottom: 0; font-size: 26px; font-weight: 700;
+                padding-right: 40px; background: pink;}
+
+#header a.menu img {position: absolute; right: 0; top: 50%; transform: translate(0,-50%);} 
+/*▶ a가 absolute라 a.menu 안에서 움직임. 오른쪽 딱 붙고 위아래로 가운데로 정렬, 항상 오른쪽에 위아래로 고정됨 */
+
+/*헤더 오른쪽 aside nav */
+#gnb {position: fixed; right: 0; top: 0; width: 450px; height: 100%; background: #ffffff;
+      box-shadow: -10px 0 50px 0 rgba(0, 0, 0, 0.3); } 
+      /*▶ box-shadow : aside bar 왼쪽 선에 음영 주기 / 음수는 왼쪽, 오른쪽은 양수 */
+
+#gnb a.close {position: absolute; right: 50px; top: 50px;}
+#gnb ul {position: absolute; left: 100px; top: 50%; transform: translate(0,-50%); font-size: 26px;}
+#gnb ul li+li {margin-top: 40px;}
+#gnb ul li a {display: block; position: relative;} /*이런 서브 메뉴의 페이지 이름들은 block으로 지정하는게 편함*/
+
+#gnb ul li a:before {content:''; position: absolute; left: 0; top: 0; width: 20px; height: 20px;
+                     border-radius: 20px; background: yellow;}
+
+#gnb p.copyright {background: pink; position: absolute; left: 0; bottom: 50px; width: 100%;
+                   text-align: center; color: #999999; font-size: 13px;}
+
+
+
+
+
+
+/*
+
+animation: circle-effect 1.5s ease-out 0s infinite normal forwards;
+
+@keyframes circle-effect {
+    0% {opacity: 1; transform: translate(-50%, 0) scale(0.8);}
+    100% {opacity: 0; transform: translate(-50%, 0) scale(1.4);}
+}
+
+animation 축약 표현
+animation: main-bg-animation 3s ease-out 0.1s 1 normal forwards running;
+animation: name duration timing-function delay iteration-count direction fill-mode play-state
+duration: 0(default), time, initial, inherit
+timing-function: ease(default), linear, ease-in, ease-out, ease-in-out, step-start, step-end, steps(int, start|end), cubic-bezier(n, n, n, n), initial, inherit
+deley: 0s(default), time, initial, inherit
+direction: normal(default), reverse, alternate, alternate-reverse, initial, inherit
+iteration-count: 1(default), number, infinite, initial, inherit
+fill-mode: none(default), forwards, backwards, both, initial, inherit
+play-state: running(default), paused, initial, inherit  (IE에서는 축약표현에 포함시 동작하지 않음, 별도로 사용)
+
+[최종 사용 예시]
+animation: main-bg-animation 3s ease-out 0s 1 normal forwards;
+animation-play-state: running;
+*/
+
