@@ -1,0 +1,317 @@
+@charset 'utf-8';
+/* CSS Document */
+
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table, blockquote {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle; max-width: 100%;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.pc {display: none !important;}
+br.only-w {content: '';}
+br.only-w:after {content: '\00a0';}
+.ir-hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: 'Noto Serif KR', serif; font-weight: 400; font-size: 14px; color: #333333; background: #ffffff;}
+#wrapper {min-width: 320px; max-width: 850px; margin: 0 auto; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); z-index: 10000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 50px; z-index: 1000;}
+#header h1 {position: absolute; left: 15px; top: -10px; width: 130px;}
+#header h1 a {display: block; width: 100%; height: 100%;}
+#header a.menu {position: absolute; right: 15px; top: 50%; transform: translate(0, -50%); font-size: 15px; font-weight: 700; padding-right: 25px;}
+#header a.menu img {position: absolute; right: 0; top: 50%; transform: translate(0, -50%); transition: transform 0.5s; width: 20px;}
+#header a.menu:hover img {transform: translate(0, -50%) rotate(90deg);}
+
+#gnb {position: fixed; right: -110%; top: 0; width: 100%; height: 100%; background: #ffffff; box-shadow: -10px 0 50px 0 rgba(0, 0, 0, 0.3); overflow: hidden; transform: right 0.3s; z-index: 100; transition: right 0.5s;}
+#gnb.open {right: 0;}
+#gnb img.bg1 {position: absolute; width: 200px; right: -100px; top: 10px; animation: rotate-forward 20s linear 0s infinite normal forwards;}
+#gnb img.bg2 {position: absolute; width: 140px; right: 30px; bottom: 15%; animation: rotate-backward 30s linear 0s infinite normal forwards;}
+#gnb:before {content: ''; position: absolute; left: -130px; bottom: 30%; width: 200px; height: 200px; border-radius: 200px; background: rgba(243, 241, 230, 0.4);}
+#gnb a.close {position: absolute; right: 20px; top: 20px; width: 20px;}
+#gnb ul {position: absolute; left: 50px; top: 50%; transform: translate(0, -50%); font-size: 20px; font-weight: 200;}
+#gnb ul li + li {margin-top: 26px;}
+#gnb ul li a {display: block; position: relative;}
+#gnb ul li a:before {content: ''; position: absolute; left: -12px; top: -2px; width: 20px; height: 20px; border-radius: 20px; z-index: -1; background: transparent; transition: background 0.5s;}
+#gnb ul li a:hover:before {background: #ede6d2;}
+#gnb p.copyright {position: absolute; left: 0; bottom: 50px; width: 100%; text-align: center; color: #999999; font-size: 13px;}
+
+#quick-menu {position: fixed; right: 15px; bottom: 50px; background: #2a2928; color: #cfcfcf; width: 80px; text-align: center;}
+#quick-menu em {display: block;}
+#quick-menu a.open {position: absolute; width: 70px; height: 70px; left: 5px; bottom: -35px; border-radius: 100px; overflow: hidden; background: #2a2928; border: 1px solid #cbac75; box-sizing: border-box; padding-top: 15px; color: #ffffff; font-size: 11px; font-weight: 700;}
+#quick-menu a.open img {transition: transform 0.5s; transform: rotate(180deg);}
+#quick-menu a.open span {font-size: 16px;}
+#quick-menu ul {overflow: hidden; height: 0; transition: height 0.5s; font-size: 11px; font-weight: 200;}
+#quick-menu ul li {position: relative;}
+#quick-menu ul li:before {content: ''; position: absolute; left: 50%; transform: translate(-50%, 0); bottom: -3px; width: 70%; height: 1px; background: #cfcfcf;}
+#quick-menu ul li:last-child:before {display: none;}
+#quick-menu ul li + li {margin-top: 5px;}
+#quick-menu ul li a {display: block; padding: 10px 5px;}
+#quick-menu ul li a img {width: 30px;}
+#quick-menu a.top {display: none;}
+#quick-menu.close a.open img {transform: rotate(0);}
+#quick-menu.close ul {height: 580px;}
+#header span.haccp {position: absolute; left: 50px; bottom: -140px;}
+
+#footer {position: relative; background: #1a1b1d; color: #878683; font-size: 13px;}
+#footer > div.footer-top {padding: 20px 15px; border-bottom: 1px solid #3a3a3a; text-align: center;}
+#footer > div.footer-top a.shop {display: block; color: #ffffff; background: #bca378; padding: 8px 0;}
+#footer > div.footer-top a.shop i {margin-right: 10px; position: relative; top: -2px;}
+#footer > div.footer-top ul.link {margin-top: 20px;}
+#footer > div.footer-top ul.link li {display: inline-block;}
+#footer > div.footer-top ul.link li + li {margin-left: 15px;}
+#footer > div.footer-top ul.link li a {transition: color 0.3s; font-size: 12px;}
+#footer > div.footer-top ul.link li a:hover {color: #e0e0e0;}
+
+
+
+#footer > div.footer-bottom {position: relative; text-align: center; padding: 30px 15px;}
+#footer > div.footer-bottom h2 {margin-bottom: 30px;}
+#footer > div.footer-bottom h2 img {width: 100px;}
+#footer > div.footer-bottom h3 {font-size: 16px; margin-bottom: 20px;}
+#footer > div.footer-bottom address {line-height: 1.6em; margin: 15px 0; font-size: 12px;}
+#footer > div.footer-bottom address span {display: block;}
+#footer > div.footer-bottom p.copyright {color: #595755; font-size: 12px;}
+#footer div.contact {color: #b29a6e; font-size: 13px; border: 1px solid #b29a6e; padding: 20px; margin-top: 30px;}
+#footer div.contact p {font-size: 16px; color: #e1c38e; margin-bottom: 10px;}
+#footer div.contact p i {margin-right: 10px; font-size: 20px;}
+#footer div.contact p em {font-size: 26px; color: #d9d6c5; font-weight: 700; margin-left: 30px;}
+
+
+
+
+
+
+
+/* main */
+body.main #main {padding-top: 100vh;}
+#main-visual {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #f2f2f2;}
+#main-visual:before {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 50vh; background: #ffffff;}
+#main-visual > div.content {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#main-visual > div.content:nth-child(1) {display: block;}
+#main-visual > div.content img.icon-top {position: absolute; left: 50%; top: 0; width: 30%;}
+#main-visual > div.content img.icon-left {position: absolute; right: 10%; top: 40%; width: 30%;}
+#main-visual > div.content img.icon-right {display: none;}
+#main-visual > div.content div.text {position: absolute; left: 20px; top: 100px;}
+#main-visual > div.content div.text h3 {font-size: 30px; line-height: 40px;}
+#main-visual > div.content div.text ul {margin: 20px 0; font-size: 13px; color: #999999;}
+#main-visual > div.content div.text ul li {background: url(../img/icon_bullet.gif) 0 center no-repeat; padding-left: 18px; background-size: 12px;}
+#main-visual > div.content div.text ul li + li {margin-top: 10px;}
+#main-visual > div.content div.text a {position: relative; display: inline-block; padding: 0 20px; transition: color 0.6s;}
+#main-visual > div.content div.text a:before {content: ''; position: absolute; left: 0; top: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #000000; border-radius: 100%; z-index: -1;}
+#main-visual > div.content div.text a:hover:before {animation: dot-effect-left 0.6s ease-out 0s 1 normal forwards;}
+#main-visual > div.content div.text a:after {content: ''; position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); width: 6px; height: 6px; background: #000000; border-radius: 100%; z-index: -1;}
+#main-visual > div.content div.text a:hover:after {animation: dot-effect-right 0.6s ease-out 0s 1 normal forwards;}
+#main-visual > div.content div.text a:hover {color: #ffffff;}
+
+#main-visual > div.indicator {position: fixed; right: -10vw; bottom: -10vw; width: 100vw; height: 100vw; overflow: hidden;}
+#main-visual > div.indicator ul.visual {}
+#main-visual > div.indicator ul.visual li {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 110px); height: calc(100% - 110px); overflow: hidden; border-radius: 100%; box-sizing: border-box; background-size: 100% auto;}
+#main-visual > div.indicator ul.visual li:nth-child(1) {background: url(../img/main_visual_01.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(2) {background: url(../img/main_visual_02.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(3) {background: url(../img/main_visual_03.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(4) {background: url(../img/main_visual_04.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(5) {background: url(../img/main_visual_05.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 85%;}
+
+#main-visual > div.indicator:before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 46px); height: calc(100% - 46px); border: 1px solid #e0e0e0; border-radius: 100%; box-sizing: border-box;}
+#main-visual > div.indicator:after {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 80px); height: calc(100% - 80px); border: 1px dashed #e0e0e0; border-radius: 100%; box-sizing: border-box; animation: rotate-forward-indicator 80s linear 0s infinite normal forwards;}
+#main-visual > div.indicator ul.product {position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: rotate(0); transition: transform 0.5s;}
+#main-visual > div.indicator ul.product li {position: absolute; left: 50%; top: 0; transform: translate(-50%, 0); height: 50%; transform-origin: center bottom;}
+#main-visual div.indicator ul.product li:nth-child(1) {transform: translate(-50%, 0) rotate(0);}
+#main-visual div.indicator ul.product li:nth-child(2) {transform: translate(-50%, 0) rotate(36deg);}
+#main-visual div.indicator ul.product li:nth-child(3) {transform: translate(-50%, 0) rotate(72deg);}
+#main-visual div.indicator ul.product li:nth-child(4) {transform: translate(-50%, 0) rotate(108deg);}
+#main-visual div.indicator ul.product li:nth-child(5) {transform: translate(-50%, 0) rotate(144deg);}
+#main-visual div.indicator ul.product li:nth-child(6) {transform: translate(-50%, 0) rotate(180deg);}
+#main-visual div.indicator ul.product li:nth-child(7) {transform: translate(-50%, 0) rotate(216deg);}
+#main-visual div.indicator ul.product li:nth-child(8) {transform: translate(-50%, 0) rotate(252deg);}
+#main-visual div.indicator ul.product li:nth-child(9) {transform: translate(-50%, 0) rotate(288deg);}
+#main-visual div.indicator ul.product li:nth-child(10) {transform: translate(-50%, 0) rotate(324deg);}
+#main-visual > div.indicator ul.product li a {display: block; text-align: center; font-size: 10px; color: #999999;}
+#main-visual > div.indicator ul.product li a em {display: block; margin-bottom: 5px;}
+#main-visual > div.indicator ul.product li a span {position: relative; display: inline-block; width: 10px; height: 10px; border-radius: 20px;}
+#main-visual > div.indicator ul.product li a span:before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 100%; border: 1px solid #e0e0e0; background: #ffffff; z-index: -1; transition: all 0.5s;}
+#main-visual > div.indicator ul.product li a:hover span:before {width: 28px; height: 28px; border-style: dashed; animation: rotate-forward-indicator 10s linear 0s infinite normal forwards;}
+#main-visual div.indicator ul.product li:nth-child(5n-4) a span {background: #9fd7d9;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-4) a span:before {border: 2px solid #9fd7d9;}
+#main-visual div.indicator ul.product li:nth-child(5n-3) a span {background: #e7e48e;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-3) a span:before {border: 2px solid #e7e48e;}
+#main-visual div.indicator ul.product li:nth-child(5n-2) a span {background: #f6b8c4;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-2) a span:before {border: 2px solid #f6b8c4;}
+#main-visual div.indicator ul.product li:nth-child(5n-1) a span {background: #945b35;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-1) a span:before {border: 2px solid #945b35;}
+#main-visual div.indicator ul.product li:nth-child(5n) a span {background: #f17a8b;}
+#main-visual div.indicator ul.product li.on:nth-child(5n) a span:before {border: 2px solid #f17a8b;}
+
+
+#main-brand {position: relative; background: #ffffff; padding-top: 80px;}
+#main-brand h2 {text-align: center; background: url(../img/bg_title.png) center bottom no-repeat; font-size: 20px; padding-bottom: 40px; margin-bottom: 50px;}
+#main-brand div.content {position: relative; padding: 30px 15px;}
+#main-brand div.content img.bg {position: absolute; left: 50%; top: 0; transform: translate(-25%, 0); max-width: none; height: 100%; opacity: 0.6;}
+#main-brand div.content img.sub {display: none;;}
+#main-brand div.content div.text {text-align: center; position: relative;}
+#main-brand div.content div.text img {width: 50%;}
+#main-brand div.content div.text p {margin: 20px 0; font-size: 13px; line-height: 1.8em;}
+#main-brand div.content div.text em {color: #b29a6e; font-weight: 700; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);}
+
+#main-macaron {position: relative; background: #f4f4f4; padding-top: 80px; padding-bottom: 100px;}
+#main-macaron h2 {text-align: center; background: url(../img/bg_title.png) center bottom no-repeat; font-size: 20px; padding-bottom: 40px; margin-bottom: 50px;}
+#main-macaron div.indicator {text-align: center; margin-bottom: 50px;}
+#main-macaron div.indicator em {font-size: 16px; color: #c7a569;}
+#main-macaron div.indicator ul {margin-top: 20px;}
+#main-macaron div.indicator li {display: inline-block;}
+#main-macaron div.indicator li + li {margin-left: 20px;}
+#main-macaron div.indicator li a {position: relative; display: block; width: 20px; height: 20px; border-radius: 100%; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);}
+#main-macaron div.indicator li.on a:before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; border-radius: 100%; border: 1px dashed #c7a569; animation: rotate-forward-indicator 10s linear 0s infinite normal forwards;}
+#main-macaron ul.product {overflow: hidden;}
+#main-macaron ul.product li {float: left; width: 50%; overflow: hidden; text-align: center; margin-bottom: 50px; padding: 0 5px; box-sizing: border-box;}
+#main-macaron ul.product li * {display: block;}
+#main-macaron ul.product li span.image {position: relative; margin: 0 auto;}
+#main-macaron ul.product li span.image img {width: 100%;}
+#main-macaron ul.product li span.image img.hover {position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 0.5s;}
+#main-macaron ul.product li a:hover span.image img.hover {opacity: 1;}
+#main-macaron ul.product li em {font-size: 16px; margin: 5px 0;}
+#main-macaron ul.product li span.en {font-size: 12px; color: #d8b77e;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes logo-effect {
+    0% {top: 0;}
+    100% {top: 10px;}
+}
+@keyframes rotate-forward {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes rotate-backward {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+@keyframes rotate-forward-indicator {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+@keyframes dot-effect-left {
+    0% {left: 0;}
+    50% {left: 50%;}
+    100% {left: 50%; width: 60px; height: 60px;}
+}
+@keyframes dot-effect-right {
+    0% {right: 0;}
+    50% {right: 50%;}
+    100% {right: 50%; width: 60px; height: 60px;}
+}
+
+
+/*
+body.main #main {padding-top: 100vh;}
+#main-visual {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #f2f2f2;}
+#main-visual:before {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: calc(100% - 400px); background: #ffffff;}
+#main-visual > div.content {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#main-visual > div.content:nth-child(1) {display: block;}
+#main-visual > div.content img.icon-top {position: absolute; left: 40%; top: 0; width: 40%;}
+#main-visual > div.content img.icon-left {position: absolute; right: 10%; bottom: 45%; width: 40%;}
+#main-visual > div.content img.icon-right {display: none;}
+#main-visual > div.content div.text {position: absolute; left: 10%; top: 100px;}
+#main-visual > div.content div.text h3 {font-size: 30px; line-height: 40px;}
+#main-visual > div.content div.text ul {margin: 20px 0; font-size: 12px; color: #999999;}
+#main-visual > div.content div.text ul li {background: url(../img/icon_bullet.gif) 0 center no-repeat; padding-left: 18px; background-size: 10px auto;}
+#main-visual > div.content div.text ul li + li {margin-top: 5px;}
+#main-visual > div.content div.text a {position: relative; display: inline-block; padding: 0 10px; transition: color 0.6s; font-size: 12px;}
+#main-visual > div.content div.text a:before {content: ''; position: absolute; left: 0; top: 50%; transform: translate(-50%, -50%); width: 4px; height: 4px; background: #000000; border-radius: 100%; z-index: -1;}
+#main-visual > div.content div.text a:hover:before {animation: dot-effect-left 0.6s ease-out 0s 1 normal forwards;}
+#main-visual > div.content div.text a:after {content: ''; position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); width: 4px; height: 4px; background: #000000; border-radius: 100%; z-index: -1;}
+#main-visual > div.content div.text a:hover:after {animation: dot-effect-right 0.6s ease-out 0s 1 normal forwards;}
+#main-visual > div.content div.text a:hover {color: #ffffff;}
+
+#main-visual > div.indicator {position: fixed; width: 100vw; height: 100vw; right: -10vw; bottom: -20vw; overflow: hidden;}
+#main-visual > div.indicator ul.visual {}
+#main-visual > div.indicator ul.visual li {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 110px); height: calc(100% - 110px); overflow: hidden; border-radius: 100%; box-sizing: border-box; background-size: 100% auto;}
+#main-visual > div.indicator ul.visual li:nth-child(1) {background: url(../img/main_visual_01.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(2) {background: url(../img/main_visual_02.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(3) {background: url(../img/main_visual_03.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(4) {background: url(../img/main_visual_04.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li:nth-child(5) {background: url(../img/main_visual_05.jpg) center center no-repeat;}
+#main-visual > div.indicator ul.visual li img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 85%;}
+
+#main-visual > div.indicator:before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 50px); height: calc(100% - 50px); border: 1px solid #e0e0e0; border-radius: 100%; box-sizing: border-box;}
+#main-visual > div.indicator:after {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 80px); height: calc(100% - 80px); border: 1px dashed #e0e0e0; border-radius: 100%; box-sizing: border-box; animation: rotate-forward-indicator 80s linear 0s infinite normal forwards;}
+#main-visual > div.indicator ul.product {position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: rotate(0); transition: transform 0.5s;}
+#main-visual > div.indicator ul.product li {position: absolute; left: 50%; top: 0; transform: translate(-50%, 0); height: 50%; transform-origin: center bottom;}
+#main-visual div.indicator ul.product li:nth-child(1) {transform: translate(-50%, 0) rotate(0);}
+#main-visual div.indicator ul.product li:nth-child(2) {transform: translate(-50%, 0) rotate(36deg);}
+#main-visual div.indicator ul.product li:nth-child(3) {transform: translate(-50%, 0) rotate(72deg);}
+#main-visual div.indicator ul.product li:nth-child(4) {transform: translate(-50%, 0) rotate(108deg);}
+#main-visual div.indicator ul.product li:nth-child(5) {transform: translate(-50%, 0) rotate(144deg);}
+#main-visual div.indicator ul.product li:nth-child(6) {transform: translate(-50%, 0) rotate(180deg);}
+#main-visual div.indicator ul.product li:nth-child(7) {transform: translate(-50%, 0) rotate(216deg);}
+#main-visual div.indicator ul.product li:nth-child(8) {transform: translate(-50%, 0) rotate(252deg);}
+#main-visual div.indicator ul.product li:nth-child(9) {transform: translate(-50%, 0) rotate(288deg);}
+#main-visual div.indicator ul.product li:nth-child(10) {transform: translate(-50%, 0) rotate(324deg);}
+#main-visual > div.indicator ul.product li a {display: block; text-align: center; font-size: 10px; color: #999999;}
+#main-visual > div.indicator ul.product li a em {display: block; margin-bottom: 5px;}
+#main-visual > div.indicator ul.product li a span {position: relative; display: inline-block; width: 10px; height: 10px; border-radius: 20px;}
+#main-visual > div.indicator ul.product li a span:before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 100%; border: 1px solid #e0e0e0; background: #ffffff; z-index: -1; transition: all 0.5s;}
+#main-visual > div.indicator ul.product li a:hover span:before {width: 28px; height: 28px; border-style: dashed; animation: rotate-forward-indicator 10s linear 0s infinite normal forwards;}
+#main-visual div.indicator ul.product li:nth-child(5n-4) a span {background: #9fd7d9;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-4) a span:before {border: 2px solid #9fd7d9;}
+#main-visual div.indicator ul.product li:nth-child(5n-3) a span {background: #e7e48e;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-3) a span:before {border: 2px solid #e7e48e;}
+#main-visual div.indicator ul.product li:nth-child(5n-2) a span {background: #f6b8c4;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-2) a span:before {border: 2px solid #f6b8c4;}
+#main-visual div.indicator ul.product li:nth-child(5n-1) a span {background: #945b35;}
+#main-visual div.indicator ul.product li.on:nth-child(5n-1) a span:before {border: 2px solid #945b35;}
+#main-visual div.indicator ul.product li:nth-child(5n) a span {background: #f17a8b;}
+#main-visual div.indicator ul.product li.on:nth-child(5n) a span:before {border: 2px solid #f17a8b;}
+*/
+
+
+
+/*
+animation: circle-effect 1.5s ease-out 0s infinite normal forwards;
+
+@keyframes circle-effect {
+    0% {opacity: 1; transform: translate(-50%, 0) scale(0.8);}
+    100% {opacity: 0; transform: translate(-50%, 0) scale(1.4);}
+}
+
+animation 축약 표현
+animation: main-bg-animation 3s ease-out 0.1s 1 normal forwards running;
+animation: name duration timing-function delay iteration-count direction fill-mode play-state
+duration: 0(default), time, initial, inherit
+timing-function: ease(default), linear, ease-in, ease-out, ease-in-out, step-start, step-end, steps(int, start|end), cubic-bezier(n, n, n, n), initial, inherit
+deley: 0s(default), time, initial, inherit
+direction: normal(default), reverse, alternate, alternate-reverse, initial, inherit
+iteration-count: 1(default), number, infinite, initial, inherit
+fill-mode: none(default), forwards, backwards, both, initial, inherit
+play-state: running(default), paused, initial, inherit  (IE에서는 축약표현에 포함시 동작하지 않음, 별도로 사용)
+
+[최종 사용 예시]
+animation: main-bg-animation 3s ease-out 0s 1 normal forwards;
+animation-play-state: running;
+*/
